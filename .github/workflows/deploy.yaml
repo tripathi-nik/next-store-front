@@ -3,7 +3,7 @@ name: Deploy Next.js to Cloud Run
 on:
   push:
     branches:
-      - master  # Jab aap main branch par push karenge tabhi deploy hoga
+      - main  # Jab aap main branch par push karenge tabhi deploy hoga
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
