@@ -16,8 +16,8 @@ RUN npm run build
 # Stage 3: Runner
 FROM node:18-alpine AS runner
 WORKDIR /app
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Create a non-root user for security
 RUN addgroup --system --gid 1001 nodejs
@@ -30,6 +30,6 @@ COPY --from=builder /app/package.json ./package.json
 
 USER nextjs
 EXPOSE 3000
-ENV PORT 3000
+ENV PORT=3000
 
 CMD ["npm", "start"]
